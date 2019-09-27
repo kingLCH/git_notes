@@ -1,0 +1,31 @@
+.PHONY: clean all test deps tags 
+
+CXX=g++
+CXXFLAGS += -g -Wall -O -std=c++11 
+CPU_ONLY := 1               
+
+DEPS_INCLUDE_PATH= $(DLIB_PATH) -I /home/lch/caffe-master/include/ 
+
+CAFFELIB = -L /home/lch/caffe-master/.build_release/lib/ -L /home/lch/caffe-master/.build_release/src/
+
+#CUDALIB = -L /usr/local/cuda-9.0/lib64/
+
+TARGET = fast_search
+
+LIBS=  -lboost_system -lcaffe -lglog  -lprotobuf -lgflags #-lcudart   
+
+OBJS := $(patsubst %.cpp,%.o,$(wildcard *.cpp))     
+
+  
+$(TARGET): $(OBJS) 
+	$(CXX)  -o $@  $^ $(LIBS)  $(OPENCVLIBS) $(CAFFELIB) $(CUDALIB)  $(DEPS_LIB_PATH) $(DEPS_INCLUDE_PATH) 
+
+
+%.o:%.cpp
+	$(CXX) -c $(CXXFLAGS)  $< $(DEPS_INCLUDE_PATH) 
+
+
+clean:
+	rm -f *.o $(TARGET)
+
+
