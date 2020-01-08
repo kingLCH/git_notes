@@ -63,12 +63,14 @@ opencv 安装好后测试
 
 * gcc `pkg-config --cflags opencv` -o facedetect facedetect.cpp `pkg-config --libs opencv` -lstdc++
 
-## Atlas
+## Atlas 200
 
 * 192.168.0.2
-  HwHiAiUser
-  Mind@123
-  #Atlas usb 訪問
+* HwHiAiUser
+* Mind@123
+
+Atlas usb 訪問
+
 * ssh -p 22 HwHiAiUser@192.168.1.2
 
 启动mind studio ,进入“~/tools/bin”路径
@@ -96,13 +98,13 @@ opencv 安装好后测试
 
 2. 接着关闭各种不需要的opencv的模块
 
-    * WITH_CUDA                                     **关闭cuda**
+    * WITH_CUDA                                     **FLASE 关闭cuda**
     * WITH_CUFFT                                    **FLASE 禁用CUFFT**
-    * WITH_FFMPEG                                **FLASE 禁用FFMPEG**
-    * WITH_OPENCL                                **FLASE 禁用OPENCL**
-    * WITH_OPENCLAMDBLAS              **FLASE 禁用OPENCLAMDBLAS**
-    * WITH_OPENCLAMDFFT                 **FLASE 禁用OPENCLAMDFFT**
-    * WITH_OPENCL_SVM                      **FLASE 禁用OPENCL_SVM**
+    * WITH_FFMPEG                                 **FLASE 禁用FFMPEG**
+    * WITH_OPENCL                                 **FLASE 禁用OPENCL**
+    * WITH_OPENCLAMDBLAS               **FLASE 禁用OPENCLAMDBLAS**
+    * WITH_OPENCLAMDFFT                  **FLASE 禁用OPENCLAMDFFT**
+    * WITH_OPENCL_SVM                        **FLASE 禁用OPENCL_SVM**
 
 3. 指定安装路径（CMAKE_INSTALL_PREFIX），作为最后使用的路径
 
