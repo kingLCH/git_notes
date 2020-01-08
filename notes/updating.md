@@ -69,7 +69,7 @@ opencv 安装好后测试
   HwHiAiUser
   Mind@123
   #Atlas usb 訪問
-  ssh -p 22 HwHiAiUser@192.168.1.2
+* ssh -p 22 HwHiAiUser@192.168.1.2
 
 启动mind studio ,进入“~/tools/bin”路径
 
@@ -82,23 +82,29 @@ opencv 安装好后测试
 ## 交叉编译opencv
 [编译参考](https://blog.csdn.net/sanallen/article/details/79022669?utm_source=blogxgwz27)
 
-1. 设定cmake中的编译器
+1. 设定cmake中的编译器:
 
-​	cmake的setup界面选择specify options for cross-compiling
-​		Operating system随意命名
-​		Compilers选择gCC和g++，例如/usr/bin/aarch64-linux-gnu-gcc和/usr/bin/aarch64-linux-gnu-g++
-​		Target Root一定要选择编译器相关头文件和库等放在一起的地方，比如/usr/aarch64-linux-gnu
-​		Include Mode一定要选择“search only in Target Root”
+   * cmake的setup界面选择specify options for cross-compiling
+
+   * Operating system随意命名
+
+   * Compilers选择gcc和g++，例如/usr/bin/aarch64-linux-gnu-gcc和/usr/bin/aarch64-linux-gnu-g++
+
+   * Target Root一定要选择编译器相关头文件和库等放在一起的地方，比如/usr/aarch64-linux-gnu
+
+   * Include Mode一定要选择“search only in Target Root”
 
 2. 接着关闭各种不需要的opencv的模块
-   诸如：WITH_CUDA
-   WITH_CUFFT                        # FLASE 禁用CUFFT
-   WITH_FFMPEG                       # FLASE 禁用FFMPEG
-   WITH_OPENCL                       # FLASE 禁用OPENCL
-   WITH_OPENCLAMDBLAS                # FLASE 禁用OPENCLAMDBLAS
-   WITH_OPENCLAMDFFT                 # FLASE 禁用OPENCLAMDFFT
-   WITH_OPENCL_SVM                   # FLASE 禁用OPENCL_SVM
+
+    * WITH_CUDA                                     **关闭cuda**
+    * WITH_CUFFT                                    **FLASE 禁用CUFFT**
+    * WITH_FFMPEG                                **FLASE 禁用FFMPEG**
+    * WITH_OPENCL                                **FLASE 禁用OPENCL**
+    * WITH_OPENCLAMDBLAS              **FLASE 禁用OPENCLAMDBLAS**
+    * WITH_OPENCLAMDFFT                 **FLASE 禁用OPENCLAMDFFT**
+    * WITH_OPENCL_SVM                      **FLASE 禁用OPENCL_SVM**
 
 3. 指定安装路径（CMAKE_INSTALL_PREFIX），作为最后使用的路径
+
 4. 后续问题修改参照[交叉编译opencv问题参考1](https://www.veryarm.com/116215.html)和[交叉编译opencv问题参考2](https://blog.csdn.net/qq_34533248/article/details/101203162)
 
