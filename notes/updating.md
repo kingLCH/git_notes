@@ -1,6 +1,6 @@
 ## AndroidStudio
 
-AndroidStudio SSL peer shut down incorrectly 问题  
+**AndroidStudio SSL peer shut down incorrectly 问题  **
 
 * 添加文本 maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 
@@ -14,7 +14,7 @@ AndroidStudio SSL peer shut down incorrectly 问题
 
 ## docker
 
-启动docker服务（ Is the docker daemon running?）
+**启动docker服务（ Is the docker daemon running?）**
 
 * service docker start  
 
@@ -25,12 +25,12 @@ AndroidStudio SSL peer shut down incorrectly 问题
 * LD_LIBRARY_PATH=/home/lch/protobuf/protobuflib-351/lib:$LD_LIBRARY_PATH
   export PKG_CONFIG_PATH=/home/lch/protobuf/protobuflib-351/lib/pkgconfig
 
-交叉编译器安装好后编译出现问题 arm-himix200-linux-g++: error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
+**交叉编译器安装好后编译出现问题 arm-himix200-linux-g++: error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory**
 
 * sudo apt-get install ia32-libs
 * sudo apt-get install g++-multilib
 
-nfs共享文件夹
+**nfs共享文件夹**
 
 * apt-get install nfs-kernel-server
 * sudo vim /etc/exports
@@ -38,28 +38,28 @@ nfs共享文件夹
       /home/lch/hi_share/ *(rw,sync,no_root_squash,no_subtree_check)
 * sudo exportfs -rv
 
-实现共享
+**实现共享**
 
 * mount -t nfs -o nolock,rize=1024,wsize=1024 192.168.12.23:/home/lch/hi_share /share
 
-nfs配置
+**nfs配置**
 
 * sudo service rpcbind start
 * sudo service nfs-server start
 
-查看可以挂载的目录
+**查看可以挂载的目录**
 
 * showmount -e localhost
 
-卸载镜像目录
+**卸载镜像目录**
 
 * sudo umount /tmp
 
-登录板端
+**登录板端**
 
 * ssh root@192.168.12.100
 
-opencv 安装好后测试
+**opencv 安装好后测试**
 
 * gcc `pkg-config --cflags opencv` -o facedetect facedetect.cpp `pkg-config --libs opencv` -lstdc++
 
@@ -69,17 +69,25 @@ opencv 安装好后测试
 * HwHiAiUser
 * Mind@123
 
-Atlas usb 訪問
+**Atlas usb 訪問**
 
 * ssh -p 22 HwHiAiUser@192.168.1.2
 
-启动mind studio ,进入“~/tools/bin”路径
+**启动mind studio ,进入“~/tools/bin”路径**
 
-* bash start.h
+* bash start.hc
 
-查找当前文件夹下包含关键字的文本
+**查找当前文件夹下包含关键字的文本**
 
 * grep -r "关键字"  ./
+
+**从host拷贝文件到device**
+
+* `sudo scp -r ./include/* HwHiAiUser@192.168.1.2:/usr/local/include`
+
+**新增opencv调用，须修改工程路径下的build文件夹下的CMakeLists.txt，增加头文件路径和库路径**
+
+* 在工程目录下输入命令`cd build && cmake . && make`
 
 ## 交叉编译opencv
 [编译参考](https://blog.csdn.net/sanallen/article/details/79022669?utm_source=blogxgwz27)
@@ -109,4 +117,24 @@ Atlas usb 訪問
 3. 指定安装路径（CMAKE_INSTALL_PREFIX），作为最后使用的路径
 
 4. 后续问题修改参照[交叉编译opencv问题参考1](https://www.veryarm.com/116215.html)和[交叉编译opencv问题参考2](https://blog.csdn.net/qq_34533248/article/details/101203162)
+
+## 常用linux命令
+
+**查找可执行文件所涉及的库**
+
+* ```
+  ldd filename
+  ```
+
+**创建软链接(libx.so.3.4指向libx.so.3.4.0)**
+
+* ```
+  ln -sf libx.so.3.4.0 libx.so.3.4
+  ```
+
+**查看文件信息**
+
+* ```
+  ls -lh finename 
+  ```
 
