@@ -96,14 +96,13 @@
 
    * cmake的setup界面选择specify options for cross-compiling
 
-   * Operating system随意命名
+   * Operating system~~随意命名~~<font color=red>只能命名为Linux</font>，
 
    * Compilers选择gcc和g++，例如/usr/bin/aarch64-linux-gnu-gcc和/usr/bin/aarch64-linux-gnu-g++
 
    * Target Root一定要选择编译器相关头文件和库等放在一起的地方，比如/usr/aarch64-linux-gnu
 
    * Include Mode一定要选择“search only in Target Root”
-
 2. 接着关闭各种不需要的opencv的模块
 
     * WITH_CUDA                                     **FLASE 关闭cuda**
@@ -113,10 +112,9 @@
     * WITH_OPENCLAMDBLAS               **FLASE 禁用OPENCLAMDBLAS**
     * WITH_OPENCLAMDFFT                  **FLASE 禁用OPENCLAMDFFT**
     * WITH_OPENCL_SVM                        **FLASE 禁用OPENCL_SVM**
-
-3. 指定安装路径（CMAKE_INSTALL_PREFIX），作为最后使用的路径
-
-4. 后续问题修改参照[交叉编译opencv问题参考1](https://www.veryarm.com/116215.html)和[交叉编译opencv问题参考2](https://blog.csdn.net/qq_34533248/article/details/101203162)
+3. 为了避免使用的时候库要放在其他地方，**CMAKE_FIND_ROOT_PATH_MODE_PROGRAME**需要设置成NEVER
+4. 指定安装路径（CMAKE_INSTALL_PREFIX），作为最后使用的路径
+5. 后续问题修改参照[交叉编译opencv问题参考1](https://www.veryarm.com/116215.html)和[交叉编译opencv问题参考2](https://blog.csdn.net/qq_34533248/article/details/101203162)
 
 ## 常用linux命令
 
@@ -137,4 +135,10 @@
 * ```
   ls -lh finename 
   ```
+
+**查看库依赖具体信息**
+
+* readelf -d filename
+
+
 
