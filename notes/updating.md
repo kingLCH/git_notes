@@ -1,6 +1,6 @@
 ## AndroidStudio
 
-**AndroidStudio SSL peer shut down incorrectly 问题  **
+**AndroidStudio SSL peer shut down incorrectly 问题**
 
 * 添加文本 maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 
@@ -112,7 +112,7 @@
     * WITH_OPENCLAMDBLAS               **FLASE 禁用OPENCLAMDBLAS**
     * WITH_OPENCLAMDFFT                  **FLASE 禁用OPENCLAMDFFT**
     * WITH_OPENCL_SVM                        **FLASE 禁用OPENCL_SVM**
-3. 为了避免使用的时候库要放在其他地方，**CMAKE_FIND_ROOT_PATH_MODE_PROGRAME**需要设置成NEVER
+3. 为了避免使用的时候库要放在其他地方，**CMAKE_FIND_ROOT_PATH_MODE_PROGRAME**需要设置成**NEVER**
 4. 指定安装路径（CMAKE_INSTALL_PREFIX），作为最后使用的路径
 5. 后续问题修改参照[交叉编译opencv问题参考1](https://www.veryarm.com/116215.html)和[交叉编译opencv问题参考2](https://blog.csdn.net/qq_34533248/article/details/101203162)
 
@@ -120,25 +120,19 @@
 
 **查找可执行文件所涉及的库**
 
-* ```
-  ldd filename
-  ```
+* `ldd filename`
 
 **创建软链接(libx.so.3.4指向libx.so.3.4.0)**
 
-* ```
-  ln -sf libx.so.3.4.0 libx.so.3.4
-  ```
+* `ln -sf libx.so.3.4.0 libx.so.3.4`
 
 **查看文件信息**
 
-* ```
-  ls -lh finename 
-  ```
+* `ls -lh finename` 
 
 **查看库依赖具体信息**
 
-* readelf -d filename
+* `readelf -d filename`
 
 
 
