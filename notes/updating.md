@@ -160,6 +160,10 @@
 
 * `ls -lah *.so  `
 
+**查看编译好的库所用的编译器 版本**
+
+* `readelf filename.so -p .comment`
+
 
 
 ## 常见问题
