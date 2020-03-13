@@ -40,7 +40,8 @@
 
 **实现共享**
 
-* mount -t nfs -o nolock,rize=1024,wsize=1024 192.168.12.23:/home/lch/hi_share /share
+* ~~mount -t nfs -o nolock,rize=1024,wsize=1024 192.168.12.23:/home/lch/hi_share /share~~
+* mount -t nfs -o nolock,rsize=1024,wsize=1024 192.168.12.23:/home/lch/hi_share share/
 
 **nfs配置**
 
