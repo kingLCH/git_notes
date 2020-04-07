@@ -178,4 +178,6 @@
   5.  `sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info.bk`
   6. `rm -rf /var/lib/dpkg/infoinfo`
   7. `sudo mv /var/lib/dpkg/info.bk/* /var/lib/dpkg/info`
-
+ 
+**模型可视化神器**
+https://github.com/lutzroeder/Netron
