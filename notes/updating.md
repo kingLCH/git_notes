@@ -4,6 +4,15 @@
 
 * 添加文本 maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 
+**AndroidStudio 导入别的工程时出现 ERROR: Failed to resolve: com.android.support:appcompat-v7:29.0.0问题**
+
+1. 涉及到不同版本的差异，注意修改build.gradle文件中的对应版本
+
+2. 若目标平台是29，则额外需要在gradle.properties 文件中增加下面两句话
+
+   android.useAndroidX=true
+   android.enableJetifier=true
+
 ## caffe依赖库
 
 * sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
