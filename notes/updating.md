@@ -13,6 +13,13 @@
    android.useAndroidX=true
    android.enableJetifier=true
 
+**AndroidStudio 打开别人得工程出现sync错误，提示找不到相关得包 **
+
+- 查看具体什么包，可以在这里去找<https://maven.aliyun.com/mvn/search> 
+- 拷贝到类似此路径`C:\Users\charlesliu\.gradle\caches\modules-2\files-2.1`
+
+
+
 ## caffe依赖库
 
 * sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
@@ -187,6 +194,6 @@
   5.  `sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info.bk`
   6. `rm -rf /var/lib/dpkg/infoinfo`
   7. `sudo mv /var/lib/dpkg/info.bk/* /var/lib/dpkg/info`
- 
+
 **模型可视化神器**
 https://github.com/lutzroeder/Netron
