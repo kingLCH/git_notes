@@ -4,3 +4,5 @@ MNN
 https://blog.csdn.net/aboy2018/article/details/104020060
 https://www.cnblogs.com/cvdream/p/12106561.html
 https://uzshare.com/view/810473
+感觉稍微靠谱的编译方案
+https://blog.csdn.net/ouyangfushu/article/details/96476245?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1
