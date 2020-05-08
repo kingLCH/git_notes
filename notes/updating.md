@@ -18,7 +18,24 @@
 - 查看具体什么包，可以在这里去找<https://maven.aliyun.com/mvn/search> 
 - 拷贝到类似此路径`C:\Users\charlesliu\.gradle\caches\modules-2\files-2.1`
 
+**AndroidStudio 生成的apk无法正常安装，提示缺少签名或者需要安装正式版本 **
 
+1. 该问题的意思是debug版的无法安装，需要安装release版本的
+2. 如何发布参考链接[如何发布release版的app](https://blog.csdn.net/to_perfect/article/details/69048419)
+3. 过程中会出现"Key was created with errors"，需要用命令转换，可以参考stackoverflow的[解决方案](https://stackoverflow.com/questions/56215400/how-to-solve-key-was-created-with-errors)
+4. 然后再根据步骤2中的发布
+
+**AndroidStudio 拉取日志 **
+
+  adb logcat -v time >D:\log.txt 
+
+**Android常见对应手机的路径 **
+
+ /storage/emulated/0/testimg
+
+**Android拷贝文件夹到指定路径 **
+
+ adb push ./track_an/. /storage/emulated/0
 
 ## caffe依赖库
 
@@ -197,3 +214,15 @@
 
 **模型可视化神器**
 https://github.com/lutzroeder/Netron
+
+
+
+## Git常用命令
+
+1. **增加.gitignore使之生效**
+
+```
+git rm -r --cached .
+git add .
+git commit -m "update .gitignore "
+```
