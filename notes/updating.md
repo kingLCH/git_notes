@@ -37,6 +37,10 @@
 
  adb push ./track_an/. /storage/emulated/0
 
+**Android从手机端拷贝文件夹到本地电脑指定路径 **
+
+adb pull /storage/emulated/0/debug/ E:\img
+
 ## caffe依赖库
 
 * sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
@@ -226,3 +230,15 @@ git rm -r --cached .
 git add .
 git commit -m "update .gitignore "
 ```
+
+2. **放弃修改**
+
+   * 未添加至暂存区
+
+     `git checkout .`
+
+   * 已添加到暂存区
+
+     `git reset HEAD .`
+
+     `git checkout .`
