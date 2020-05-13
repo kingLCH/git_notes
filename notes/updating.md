@@ -242,3 +242,23 @@ git commit -m "update .gitignore "
      `git reset HEAD .`
 
      `git checkout .`
+
+     `git reset --hard`(回到之前的提交)
+
+3. 给某此commit打上tag
+
+   `git tag <tag name> 16098ee1cbbc8a1884e19c6681735e1792f9b577 `
+
+4. 提交后当前分支莫名其妙的出现在head，如何merge回原来的分支
+
+![](C:\Users\charlesliu\Desktop\企业微信截图_20200513141454.png)
+
+完整命令为：
+
+```
+git branch temp 172d6 #新建临时分支，这是commit的内容在临时分支中存在
+git checkout master   #回到所需分支
+git merge temp        #merge到主分支
+git branch -d "temp"  #删除临时分支
+```
+
