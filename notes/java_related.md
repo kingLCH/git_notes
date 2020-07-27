@@ -26,4 +26,13 @@
 
    
 
-3. 
+3. RGBA的byte数组转bitmap
+
+   ```java
+   Bitmap stitchBmp = Bitmap.createBitmap(mRecWidth, mRecHeigth, Bitmap.Config.ARGB_8888);
+   
+   stitchBmp.copyPixelsFromBuffer(ByteBuffer.wrap(mDetectBuf));
+   ```
+
+4. 
+
