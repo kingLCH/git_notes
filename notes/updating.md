@@ -262,3 +262,26 @@ git merge temp        #merge到主分支
 git branch -d "temp"  #删除临时分支
 ```
 
+5. 提交所有tag到远端分支
+
+   ```
+   git push origin --tags
+   ```
+
+6. 
+
+# protobuf
+
+1. windows编译
+
+   ```
+    C:\Path\to\protobuf\cmake\build>mkdir release & cd release
+    C:\Path\to\protobuf\cmake\build\release>cmake -G "NMake Makefiles" ^
+    -DCMAKE_BUILD_TYPE=Release ^
+    -DCMAKE_INSTALL_PREFIX=../../../../install ^
+    ../..
+   ```
+
+2. [参考地址](https://github.com/protocolbuffers/protobuf/blob/master/cmake/README.md )
+
+3. [下载地址](https://github.com/protocolbuffers/protobuf/releases )
