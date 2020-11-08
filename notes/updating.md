@@ -141,7 +141,7 @@ adb pull /storage/emulated/0/debug/ E:\img
    * Target Root一定要选择编译器相关头文件和库等放在一起的地方，比如/usr/aarch64-linux-gnu
 
    * Include Mode一定要选择“search only in Target Root”
-   
+
 2. 接着关闭各种不需要的opencv的模块
 
     * WITH_CUDA                                     **FLASE 关闭cuda**
@@ -151,7 +151,7 @@ adb pull /storage/emulated/0/debug/ E:\img
     * WITH_OPENCLAMDBLAS               **FLASE 禁用OPENCLAMDBLAS**
     * WITH_OPENCLAMDFFT                  **FLASE 禁用OPENCLAMDFFT**
     * WITH_OPENCL_SVM                        **FLASE 禁用OPENCL_SVM**
-    
+
 3. 为了避免使用的时候库要放在其他地方，**CMAKE_FIND_ROOT_PATH_MODE_PROGRAME**需要设置成**NEVER**
 
 4. 指定安装路径（CMAKE_INSTALL_PREFIX），作为最后使用的路径
@@ -172,9 +172,15 @@ adb pull /storage/emulated/0/debug/ E:\img
 
        `export LD_LIBRARY_PATH=/home/usrname/opencv/lib:$LD_LIBRARY_PATH`
 
-    3. 保存退出后输入命令使它生效：`source /etc/profile`
+    3. 保存退出后输入命令使它生效：`source /etc/profile` 
 
-        
+    
+
+    7. 运行时指定路径查找所依赖的so
+
+    ​	[参考路径](https://www.cnblogs.com/progamming/p/13043652.html)
+
+      
 
 ## 常用linux命令
 
@@ -184,7 +190,7 @@ adb pull /storage/emulated/0/debug/ E:\img
 
 **创建软链接(libx.so.3.4指向libx.so.3.4.0)**
 
-* `ln -sf libx.so.3.4.0 libx.so.3.4`
+* `ln -sf libx.so.3.4 libx.so.3.4.0`
 
 **查看文件信息**
 
@@ -262,10 +268,14 @@ git merge temp        #merge到主分支
 git branch -d "temp"  #删除临时分支
 ```
 
-5. 提交所有tag到远端分支
+5. 提交tag到远端
 
    ```
    git push origin --tags
+   
+   git push origin tagName   # 提交指定 tag
+   
+   git push origin --tags  #提交所有未提交的 tag
    ```
 
 6. 
@@ -285,3 +295,14 @@ git branch -d "temp"  #删除临时分支
 2. [参考地址](https://github.com/protocolbuffers/protobuf/blob/master/cmake/README.md )
 
 3. [下载地址](https://github.com/protocolbuffers/protobuf/releases )
+
+
+
+# 虚拟机
+
+1. 虚拟机无法跟物理机共享文件夹问题
+
+   [参考链接](https://blog.csdn.net/l979951191/article/details/50596986/)
+
+   
+
